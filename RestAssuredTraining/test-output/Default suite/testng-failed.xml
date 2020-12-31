@@ -5,7 +5,7 @@
     <classes>
       <class name="RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures">
         <methods>
-          <include name="testUsingXpath1"/>
+          <include name="testExtractDetailsUsingPath"/>
         </methods>
       </class> <!-- RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures -->
     </classes>

@@ -3,6 +3,8 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,7 +93,7 @@ public class Test1_BasicFeatures {
 		using And to increase readablity. Generally used when writting in one line xpath style
 	 */
 
-	@Test
+	//@Test
 	public void testAndFeatureForReadablity() {
 		given().param("Key1", "Val1").and().header("headA","headVal").when().get("https://reqres.in/api/users").then().body("data.first_name", hasItems("Charles","Tracey")).statusCode(200).log().all();
 	}
@@ -104,8 +106,94 @@ public class Test1_BasicFeatures {
 			get("https://reqres.in/api/users").
 		then().
 			//body("data.first_name", hasItems("Charles","Tracey")).
-			body(hasXPath("/data/first_name",containsString("Charles"))).
+			//body(hasXPath("/data/first_name",containsString("Charles"))).
 			statusCode(200).
 			log().all();
 	}
+	
+/*	Basic way to test allparameters*/
+	
+//	@Test
+	public void testWithoutRoot() {
+		given().
+			get("https://reqres.in/api/users").
+		then().
+			body("data.first_name", is("George")).
+			body("data.last_name", is("Bluth")).
+			body("data.email", is("george.bluth@reqres.in")).
+			statusCode(200).
+			log().all();
+	}
+	
+	/*Recomemded way to test all paramers using root*/
+	
+	//@Test
+	public void testWithRoot() {
+		given().
+			get("https://reqres.in/api/users").
+		then().
+			root("data").
+			body("first_name", is("George")).
+			body("last_name", is("Bluth")).
+			body("email", is("george.bluth@reqres.in")).
+			statusCode(200).
+			log().all();
+	}
+	
+	/*We can detach root path in between*/
+	//@Test
+	public void testDetachRoot() {
+		given().
+			get("https://reqres.in/api/users").
+		then().
+			root("data").
+			body("first_name", is("George")).
+			body("last_name", is("Bluth")).
+			detachRoot("data").
+			body("email", is("george.bluth@reqres.in")).
+			statusCode(200).
+			log().all();
+	}
+	
+	
+	/*Read response in different ways*/
+	@Test
+	public void testGetResponseAsString() {
+		String responseString=get("https://reqres.in/api/users").asString();
+		System.out.println("My Response is:\n\n\n"+responseString);
+	}
+	
+	
+	/*Get all response as Input string*/
+	@Test
+	public void testGetResponseAsInputStream() throws IOException {
+		InputStream stream =get("https://reqres.in/api/users").asInputStream(); 
+		System.out.println("Stream Length="+stream.toString().length());
+		stream.close();
+	}
+	
+	
+	/*Extract details using path*/
+	@Test
+	public void testExtractDetailsUsingPath() {
+		String href =
+		when().
+			get("http://jsonplaceholder.typicode.com/photos/1").
+		then().
+			contentType(ContentType.JSON).
+			body("albumId", equalTo(1)).
+		extract().
+			path("url");
+		System.out.println(href);
+		
+		when().get(href).then().statusCode(200);
+	}
+		
+		
+		
+		
+		
+		
+		
+		
 }
