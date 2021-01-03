@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6811" started-at="2020-12-31T09:46:42Z" finished-at="2020-12-31T09:46:49Z">
+  <suite name="Default suite" duration-ms="3723" started-at="2021-01-03T13:04:24Z" finished-at="2021-01-03T13:04:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6811" started-at="2020-12-31T09:46:42Z" finished-at="2020-12-31T09:46:49Z">
-      <class name="RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures">
-        <test-method status="PASS" signature="testEqualToFunction()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testEqualToFunction" duration-ms="2568" started-at="2020-12-31T09:46:42Z" finished-at="2020-12-31T09:46:45Z">
+    <test name="Default test" duration-ms="3723" started-at="2021-01-03T13:04:24Z" finished-at="2021-01-03T13:04:27Z">
+      <class name="RestAssuredTraining.AdvanceScenarios.Test_getResponseHeader">
+        <test-method status="PASS" signature="testDetailedCookies()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test_getResponseHeader@5622fdf]" name="testDetailedCookies" duration-ms="2274" started-at="2021-01-03T13:04:24Z" finished-at="2021-01-03T13:04:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testEqualToFunction -->
-        <test-method status="PASS" signature="testExtractDetailsUsingPath()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testExtractDetailsUsingPath" duration-ms="2129" started-at="2020-12-31T09:46:45Z" finished-at="2020-12-31T09:46:47Z">
+        </test-method> <!-- testDetailedCookies -->
+        <test-method status="PASS" signature="testGetCookies()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test_getResponseHeader@5622fdf]" name="testGetCookies" duration-ms="690" started-at="2021-01-03T13:04:26Z" finished-at="2021-01-03T13:04:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testExtractDetailsUsingPath -->
-        <test-method status="PASS" signature="testGetResponseAsInputStream()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testGetResponseAsInputStream" duration-ms="285" started-at="2020-12-31T09:46:47Z" finished-at="2020-12-31T09:46:47Z">
+        </test-method> <!-- testGetCookies -->
+        <test-method status="PASS" signature="testResponseHeader()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test_getResponseHeader@5622fdf]" name="testResponseHeader" duration-ms="727" started-at="2021-01-03T13:04:27Z" finished-at="2021-01-03T13:04:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetResponseAsInputStream -->
-        <test-method status="PASS" signature="testGetResponseAsString()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testGetResponseAsString" duration-ms="261" started-at="2020-12-31T09:46:47Z" finished-at="2020-12-31T09:46:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetResponseAsString -->
-        <test-method status="PASS" signature="testLogging()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testLogging" duration-ms="368" started-at="2020-12-31T09:46:47Z" finished-at="2020-12-31T09:46:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogging -->
-        <test-method status="PASS" signature="testParametersAndHeaders()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testParametersAndHeaders" duration-ms="307" started-at="2020-12-31T09:46:48Z" finished-at="2020-12-31T09:46:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testParametersAndHeaders -->
-        <test-method status="PASS" signature="testStatusCode()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testStatusCode" duration-ms="345" started-at="2020-12-31T09:46:48Z" finished-at="2020-12-31T09:46:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testStatusCode -->
-        <test-method status="PASS" signature="testUsingXpath1()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testUsingXpath1" duration-ms="267" started-at="2020-12-31T09:46:49Z" finished-at="2020-12-31T09:46:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUsingXpath1 -->
-        <test-method status="PASS" signature="testhasItemsFunction()[pri:0, instance:RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures@4883b407]" name="testhasItemsFunction" duration-ms="238" started-at="2020-12-31T09:46:49Z" finished-at="2020-12-31T09:46:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testhasItemsFunction -->
-      </class> <!-- RestAssuredTraining.AdvanceScenarios.Test1_BasicFeatures -->
+        </test-method> <!-- testResponseHeader -->
+      </class> <!-- RestAssuredTraining.AdvanceScenarios.Test_getResponseHeader -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

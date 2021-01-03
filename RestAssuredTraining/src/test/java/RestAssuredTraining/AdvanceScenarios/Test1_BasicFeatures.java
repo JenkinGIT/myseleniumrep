@@ -12,7 +12,7 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
-
+import io.restassured.response.Response;
 
 import org.testng.annotations.Test;
 
@@ -189,9 +189,46 @@ public class Test1_BasicFeatures {
 		when().get(href).then().statusCode(200);
 	}
 		
+	
+	/*Extract details using path in one line*/
+	@Test
+	public void testExtractPathInOneLine() {
+		//type 1:
+				
+		String href1 =get("http://jsonplaceholder.typicode.com/photos/1").path("thumbnailUrl");
+		System.out.println("Fetched URL="+href1);
+		when().get(href1).then().statusCode(200);
 		
 		
+		//type 2:
+		String href2 =get("http://jsonplaceholder.typicode.com/photos/1").andReturn().jsonPath().getString("thumbnailUrl");
+		System.out.println("Fetched URL="+href2);
+		when().get(href2).then().statusCode(200);
+	}
+	
+	/*Extract details as Response for further use */
+	@Test
+	public void testExtraDetailsUsingResponse() {
+		Response response=
+		when().
+			get("http://jsonplaceholder.typicode.com/photos/1").
+		then().
+			extract().
+			response();
+		System.out.println("Content Type="+response.contentType());
+		System.out.println("Href:"+response.path("url"));
+		System.out.println("Status Code:"+response.statusCode());
+	}
 		
+	/*This test will verify the response schema with predefined existing schema */
+	//Path=src/test/resources/geo-schema.json
+	@Test
+	public void testSchema() {
+//		given().
+//			get("http://jsonplaceholder.typicode.com/photos/1").
+//		then().assertThat().body(matchJsonSchemaInClasspath("test3_geo_schema123.json"));
+		
+	}	
 		
 		
 		
